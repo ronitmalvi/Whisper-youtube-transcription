@@ -38,7 +38,7 @@ async def get_transcript():
             # print (result)
             sentence = result.channel.alternatives[0].transcript
 
-            print (result)
+            # print (result)
             
             if not result.speech_final:
                 transcript_collector.add_part(sentence)
