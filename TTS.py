@@ -9,18 +9,18 @@ from deepgram import Deepgram
 load_dotenv()
 
 DG_API_KEY = os.getenv("DEEPGRAM_API")
-MODEL_NAME = "alpha-stella-en-v2"
+MODEL_NAME = "aura-asteria-en"
 
 def is_installed(lib_name: str) -> bool:
     lib = shutil.which(lib_name)
     return lib is not None
 
 def play_stream(audio_stream, use_ffmpeg=True):
-    player = "ffplay"
+    player = r"E:/Projects/ffmpeg-master-latest-win64-gpl-shared/bin/ffplay.exe"
     if not is_installed(player):
         raise ValueError(f"{player} not found, necessary to stream audio.")
     
-    player_command = ["ffplay", "-autoexit", "-", "-nodisp"]
+    player_command = [player, "-autoexit", "-", "-nodisp"]
     player_process = subprocess.Popen(
         player_command,
         stdin=subprocess.PIPE,
