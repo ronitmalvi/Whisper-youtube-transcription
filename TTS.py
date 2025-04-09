@@ -16,7 +16,7 @@ def is_installed(lib_name: str) -> bool:
     return lib is not None
 
 def play_stream(audio_stream, use_ffmpeg=True):
-    player = r"E:/Projects/ffmpeg-master-latest-win64-gpl-shared/bin/ffplay.exe"
+    player = r"E:\\Projects\\ffmpeg-master-latest-win64-gpl-shared\\bin\\ffplay.exe"
     if not is_installed(player):
         raise ValueError(f"{player} not found, necessary to stream audio.")
     
