@@ -20,12 +20,6 @@ A simple yet powerful voice assistant built with Python that can recognize voice
 
 ---
 
-## 📸 Demo
-
-> *Add a link or a gif/screen recording of the voice assistant in action here.*
-
----
-
 ## 🧠 Technologies Used
 
 - Python 3.x
