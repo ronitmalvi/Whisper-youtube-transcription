@@ -87,7 +87,8 @@ class TextToSpeech:
             "Content-Type": "application/json"
         }
         payload = {
-            "text": text
+            "text": text,
+            "voice": self.MODEL_NAME
         }
 
         player_command = [self.player, "-autoexit", "-", "-nodisp"]
@@ -136,7 +137,7 @@ async def get_transcript(callback):
     try:
         # example of setting up a client config. logging values: WARNING, VERBOSE, DEBUG, SPAM
         config = DeepgramClientOptions(options={"keepalive": "true"})
-        deepgram: DeepgramClient = DeepgramClient("", config)
+        deepgram: DeepgramClient = DeepgramClient(os.getenv("DEEPGRAM_API"), config)
 
         dg_connection = deepgram.listen.asynclive.v("1")
         print ("Listening...")
